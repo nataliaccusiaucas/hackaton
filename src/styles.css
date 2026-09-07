@@ -1,0 +1,203 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Truth-First PropTech
+ * Azul marino + blanco + gris neutro, acentos verde esmeralda (validación)
+ * y dorado/naranja suave (acciones).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.985 0.003 250);
+  --foreground: oklch(0.24 0.05 254);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.05 254);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.05 254);
+  --primary: oklch(0.31 0.075 254);
+  --primary-foreground: oklch(0.99 0.002 250);
+  --secondary: oklch(0.955 0.008 250);
+  --secondary-foreground: oklch(0.31 0.075 254);
+  --muted: oklch(0.955 0.008 250);
+  --muted-foreground: oklch(0.5 0.02 253);
+  --accent: oklch(0.79 0.14 72);
+  --accent-foreground: oklch(0.25 0.06 60);
+  --success: oklch(0.6 0.13 162);
+  --success-foreground: oklch(0.99 0.002 250);
+  --warning: oklch(0.82 0.14 88);
+  --warning-foreground: oklch(0.28 0.06 70);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.002 250);
+  --border: oklch(0.9 0.012 252);
+  --input: oklch(0.9 0.012 252);
+  --ring: oklch(0.31 0.075 254);
+  --chart-1: oklch(0.31 0.075 254);
+  --chart-2: oklch(0.6 0.13 162);
+  --chart-3: oklch(0.79 0.14 72);
+  --chart-4: oklch(0.5 0.02 253);
+  --chart-5: oklch(0.7 0.09 236);
+  --sidebar: oklch(0.99 0.002 250);
+  --sidebar-foreground: oklch(0.24 0.05 254);
+  --sidebar-primary: oklch(0.31 0.075 254);
+  --sidebar-primary-foreground: oklch(0.99 0.002 250);
+  --sidebar-accent: oklch(0.955 0.008 250);
+  --sidebar-accent-foreground: oklch(0.31 0.075 254);
+  --sidebar-border: oklch(0.9 0.012 252);
+  --sidebar-ring: oklch(0.31 0.075 254);
+
+  --gradient-navy: linear-gradient(135deg, oklch(0.26 0.07 258), oklch(0.36 0.08 248));
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.14 78), oklch(0.74 0.15 60));
+  --shadow-card: 0 12px 34px -18px oklch(0.31 0.075 254 / 0.45);
+  --shadow-float: 0 18px 45px -18px oklch(0.31 0.075 254 / 0.55);
+}
+
+.dark {
+  --background: oklch(0.19 0.04 256);
+  --foreground: oklch(0.97 0.004 250);
+  --card: oklch(0.24 0.05 256);
+  --card-foreground: oklch(0.97 0.004 250);
+  --popover: oklch(0.24 0.05 256);
+  --popover-foreground: oklch(0.97 0.004 250);
+  --primary: oklch(0.9 0.03 250);
+  --primary-foreground: oklch(0.22 0.05 256);
+  --secondary: oklch(0.29 0.045 256);
+  --secondary-foreground: oklch(0.97 0.004 250);
+  --muted: oklch(0.29 0.045 256);
+  --muted-foreground: oklch(0.75 0.02 253);
+  --accent: oklch(0.79 0.14 72);
+  --accent-foreground: oklch(0.22 0.05 60);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.7 0.05 250);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+}
+
+/* ---------- Modos de accesibilidad ---------- */
+
+/* Fuentes de alta visibilidad */
+html.a11y-grande {
+  font-size: 20px;
+}
+
+html.a11y-legible body {
+  font-family: "Atkinson Hyperlegible", var(--font-sans);
+  letter-spacing: 0.015em;
+  line-height: 1.75;
+}
+
+html.a11y-legible h1,
+html.a11y-legible h2,
+html.a11y-legible h3,
+html.a11y-legible h4 {
+  font-family: "Atkinson Hyperlegible", var(--font-display);
+}
+
+/* Alto contraste */
+html.a11y-contraste {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.12 0.02 254);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0.02 254);
+  --muted-foreground: oklch(0.28 0.02 254);
+  --primary: oklch(0.2 0.08 258);
+  --border: oklch(0.35 0.02 254);
+  --input: oklch(0.35 0.02 254);
+  --success: oklch(0.45 0.14 162);
+  --accent: oklch(0.62 0.16 62);
+  --accent-foreground: oklch(1 0 0);
+}
+
+html.a11y-contraste *:focus-visible {
+  outline: 3px solid var(--color-foreground);
+  outline-offset: 2px;
+}
+
+/* Altura reducida (silla de ruedas / kiosco ferial) */
+html.a11y-silla body {
+  padding-top: 22vh;
+}
+
+@utility superficie-vidrio {
+  background-color: color-mix(in oklab, var(--color-card) 88%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 600px) {
+  [data-sonner-toaster].toaster {
+    width: calc(100% - var(--mobile-offset-left) - var(--mobile-offset-right));
+  }
+
+  [data-sonner-toaster].toaster [data-sonner-toast] {
+    width: 100%;
+  }
+}
