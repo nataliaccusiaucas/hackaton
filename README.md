@@ -31,6 +31,24 @@ npm start
 
 La carpeta .output contiene el servidor y los recursos compilados.
 
+## Vercel
+
+El archivo `vercel.json` configura TanStack Start, `npm run build` y el directorio
+`.vercel/output`. Nitro detecta Vercel automáticamente y genera los recursos
+estáticos y las funciones de servidor para el despliegue.
+
+Publica estos cambios en el repositorio conectado y ejecuta un nuevo despliegue.
+No configures `dist` como directorio de salida ni fuerces `NITRO_PRESET=node-server`
+en las variables de entorno de Vercel.
+
+Para comprobar la compilación de Vercel localmente con PowerShell:
+
+```powershell
+$env:NITRO_PRESET = "vercel"
+npm run build
+Remove-Item Env:NITRO_PRESET
+```
+
 ## Estructura
 
 - src/routes: rutas y documento principal.
